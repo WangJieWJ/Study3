@@ -42,6 +42,33 @@ WCM相关知识
     主要思路是TRS置标处理数据的内容，存放的位置以及如何存放等，
     数据的表现形式则由标准的html语言描述，
   
+```html
+<FONT COLOR=RED>
+<TRS_DOCUMENT FIELD="DOCTITLE">这里放置文档标题</TRS_DOCUMENT>
+</FONT>
+```
+  其中：第二行是TRS置标，其他部分是标准的HTML置标。TRS置标表明要在该位置放置字段名为"DOCTITLE"的字段内容。
+  
+## 根据系统的需要和使用方便，在TRS WCM系统的置标中采用了四种类型的置标，
+  
+  概览置标
+  
+  主要用于表示一个循环的属性，例如 TRS_DOCUMENTS、TRS_CHANNELS、TRS_RELNEWS 等。 
+  
+  览细置标
+  
+  主要用于引用某个具体的数据库字段，例如TRS_DOCUMENT、TRS_CHANNEL等
+  
+      TRS 置标统一以“<TRS_” 开头（置标名、属性名与大小写无关），<TRS_XXX>与</TRS_XXX>应成对出现，其中细览置标可以这样撰写
+      <TRS_XXX FIELD=”***”/>。<TRS_XXX>与</TRS_XXX>之间的内容在生成页面时，将被数据库的输出内容所替代。
+      每个置标都可以有多个置标属性，以实现不同的控制目的。XXX 表示当前所取的对象类型，比如文档置标就是 DOCUMENT；
+      最后的字母为 S 表示是一个概览置标，获取的是一个循环。 
+    
+      其中 ID 属性表示当前置标所代表的对象从哪个地方获取；例如 TRS_DOCUMENTS中的 ID 表示的是从哪个栏目获取文档集合；
+      FIELD 属性表示当前置标获取的是对象的那个属性，和数据库字段一一对应；
+      例如<TRS_DOCUMENT FIELD=”DOCTITLE”/>表示获取的是当前文档的标题属性。
+  
+  
   
   
   
