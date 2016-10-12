@@ -55,7 +55,7 @@ WCM相关知识
   
   主要用于表示一个循环的属性，例如 TRS_DOCUMENTS、TRS_CHANNELS、TRS_RELNEWS 等。 
   
-  览细置标
+  细览置标
   
   主要用于引用某个具体的数据库字段，例如TRS_DOCUMENT、TRS_CHANNEL等
   
